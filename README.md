@@ -37,3 +37,5 @@ ViaReady is not affiliated with the DGT. The guides explain the law and do not r
 ## The domain
 
 `guia.viaready.com` reaches this site through one DNS record: `CNAME guia → viaready.github.io`. If this repository is ever deleted, or its Pages site switched off, remove that DNS record first; a record left pointing at GitHub with no site behind it can be claimed by somebody else's Pages site.
+
+Saving the custom domain in the repository's Pages settings (or through the API) makes GitHub commit `docs/CNAME` itself, in the name of the account that saved it. That is where the two commits "Delete CNAME" and "Create CNAME" come from: the domain was saved again on 15 November 2026 so that GitHub would issue the HTTPS certificate.

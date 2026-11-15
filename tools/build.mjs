@@ -286,6 +286,7 @@ escribir(
     .map((p) => `  <url><loc>${ORIGEN}${p.ruta}</loc><lastmod>${LEIDO_EL}</lastmod></url>`)
     .join('\n')}\n</urlset>\n`,
 );
-escribir('CNAME', 'guia.viaready.com\n');
+// Sin salto de línea final: así lo escribe GitHub cuando se guarda el dominio en los ajustes de Pages.
+escribir('CNAME', 'guia.viaready.com');
 escribir('.nojekyll', '');
 console.log(`${terminos.length} términos en ${SECCIONES.length} secciones`);
