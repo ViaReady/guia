@@ -1,0 +1,343 @@
+/* Guías de ViaReady. Los colores son los de viaready.com; no hay scripts ni fuentes externas. */
+:root {
+  --bg: #f5f6fb;
+  --surface: #ffffff;
+  --surface-2: #eef0f8;
+  --fg: #15182b;
+  --fg-muted: #525773;
+  --border: #dcdfec;
+  --primary: #5557e8;
+  --primary-text: #3d3fc7;
+  --on-primary: #ffffff;
+  --success: #0a6b55;
+  --success-soft: #d9f5e9;
+  --warning-soft: #fff3da;
+  --warning: #7a4b00;
+  --radius: 18px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #090c19;
+    --surface: #11162b;
+    --surface-2: #171d35;
+    --fg: #eef0fb;
+    --fg-muted: #a5abc6;
+    --border: #283050;
+    --primary: #7b7dff;
+    --primary-text: #b3b4ff;
+    --on-primary: #0b1020;
+    --success: #5de0c0;
+    --success-soft: #153e33;
+    --warning-soft: #3a2c10;
+    --warning: #f3c56b;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-text);
+  text-underline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.saltar {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--surface);
+  padding: 0.5rem 0.75rem;
+}
+
+.saltar:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.cabecera,
+main,
+.pie {
+  width: min(100% - 2rem, 46rem);
+  margin-inline: auto;
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--fg-muted);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.marca img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.app {
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9375rem;
+}
+
+.migas {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  margin-top: 0.5rem;
+}
+
+.portada {
+  padding-block: 1.5rem 0.5rem;
+}
+
+.antetitulo {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-text);
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+}
+
+.resumen {
+  font-size: 1.1875rem;
+  line-height: 1.5;
+}
+
+.caja {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  margin-block: 1.25rem;
+}
+
+.caja h2 {
+  font-size: 1.125rem;
+}
+
+.parejas,
+.indice,
+.fuentes,
+.lista-guias,
+.pie ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.parejas li,
+.indice li {
+  padding-block: 0.3rem;
+  border-top: 1px solid var(--border);
+}
+
+.parejas li:first-child,
+.indice li:first-child {
+  border-top: 0;
+}
+
+.indice li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.indice span {
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.seccion {
+  padding-block: 1.75rem 0.5rem;
+}
+
+.entrada {
+  margin: 0 0 1rem;
+  color: var(--fg-muted);
+}
+
+dl {
+  margin: 0;
+}
+
+.termino {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin-block: 0.75rem;
+}
+
+.termino:target {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
+}
+
+dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+}
+
+.ancla {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.ancla:hover {
+  text-decoration: underline;
+}
+
+.en {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.marca-2026 {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--success);
+  background: var(--success-soft);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+dd {
+  margin: 0.4rem 0 0;
+}
+
+dd p {
+  margin: 0.35rem 0;
+}
+
+.ojo {
+  background: var(--warning-soft);
+  color: var(--warning);
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.ref,
+.nota {
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+.fuentes li {
+  padding-block: 0.3rem;
+}
+
+.lista-guias li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+
+.lista-guias a {
+  font-size: 1.1875rem;
+}
+
+.lista-guias p {
+  margin: 0.4rem 0 0;
+  color: var(--fg-muted);
+}
+
+.llamada {
+  background: var(--surface-2);
+}
+
+.boton {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  margin-inline-end: 0.75rem;
+}
+
+.enlace {
+  font-weight: 700;
+}
+
+.pie {
+  margin-top: 2.5rem;
+  padding-block: 1.5rem 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.pie ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-block: 0.75rem;
+}
